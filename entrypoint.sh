@@ -7,10 +7,8 @@ GOFMT_OUTPUT="$(gofmt ${2} `find ${1} -name '*.go' | grep -v vendor` 2>&1)"
 if [ -n "$GOFMT_OUTPUT" ]; then
   echo "All the following files are not correctly formatted"
   echo "${GOFMT_OUTPUT}"
-  s="gofmt-output=__OUTPUT__"
-  echo $s
-  output=$(echo $s | sed -i "s~__OUTPUT__~${GOFMT_OUTPUT}~g")
-  echo $output >> $GITHUB_OUTPUT
+  
+  echo ${GOFMT_OUTPUT} >> $GITHUB_OUTPUT
 
   exit 1
 fi
