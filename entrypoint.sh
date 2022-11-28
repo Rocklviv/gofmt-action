@@ -9,8 +9,7 @@ if [ -n "$GOFMT_OUTPUT" ]; then
   echo "${GOFMT_OUTPUT}"
   s="gofmt-output=__OUTPUT__"
   echo $s
-  output=$(echo $s | sed -i "s/__OUTPUT__/${GOFMT_OUTPUT}/g")
-  echo $output
+  output=$(echo $s | sed -i "s~__OUTPUT__~${GOFMT_OUTPUT}~g")
   echo $output >> $GITHUB_OUTPUT
 
   exit 1
