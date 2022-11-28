@@ -12,3 +12,4 @@ if [ -n "$GOFMT_OUTPUT" ]; then
 fi
 
 echo "gofmt-output=Gofmt step succeed" >> $GITHUB_OUTPUT
+echo "${GITHUB_OUTPUT}"
